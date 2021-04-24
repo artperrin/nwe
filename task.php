@@ -14,6 +14,9 @@
         $global_conf = json_decode(file_get_contents($config_file), true);  
         $conf = $global_conf[$currentTask]; // configuration of the proper task
         $nb_types = count($conf);
+        if($nb_types>1){
+            $default_type = false;
+        }
         // show configuration mode
         if(isset($_POST["conf_mod"])){
             $class = 'visible';
@@ -77,12 +80,14 @@
             $modify = $_POST['type_to_modify'];
             $score = $_POST['modify_type_score'];
             modify_or_add_conf($modify, $score, $currentTask, $config_file);
+            header('location: task.php');
         }
         // add new type
         if(isset($_POST['submit_add_type'])){
             $new_type_name = $_POST['add_type_name'];
             $new_type_score = $_POST['add_type_score'];
             modify_or_add_conf($new_type_name, $new_type_score, $currentTask, $config_file);
+            header('location: task.php');
         }
         // remove type
         if(isset($_POST['submit_remove'])){
@@ -91,6 +96,7 @@
             // write the data
             $global_conf[$currentTask] = $conf;
             file_put_contents($config_file, json_encode($global_conf));
+            header('location: task.php');
         }
     }
     else{
@@ -137,7 +143,6 @@
                         echo "<label for='".$type."'> ".$type." </label><br/>";
                     }
                     echo "</fieldset> </p>";
-                    $default_type = false; // not default mode anymore, the user needs to make a choice
                 }
                 // default mode will be used
                 echo "<input class='button' type='submit' name='submit_task' value='Task done'/>";
