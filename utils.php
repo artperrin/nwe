@@ -1,6 +1,18 @@
 <?php
     // some functions used in multiple .php files
 
+    function check_password($try, $truth){
+        // used to check if a try is indeed the password
+        if($try == $truth){
+            echo "<div id='pane'> <center> Password OK <br>";
+            return true;
+        }
+        else{
+            echo "<div id='pane'> <center> Wrong password, try again. </center> </div>";
+            return false;
+        }
+    }
+
     function get_tasks($conf_file){
         // used to extract all the tasks' names from a given configuration file
         $conf = json_decode(file_get_contents($conf_file), true);
