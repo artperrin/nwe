@@ -163,7 +163,7 @@
                 // modify existing types if any
                 if($nb_types>0){
                     echo "<form method='POST' action='task.php'>";
-                    echo "<label for='type_to_modify'> Modify a type :</label>";
+                    echo "<label for='type_to_modify'> Modify a type:</label>";
                     echo "<select name='type_to_modify' id='type_to_modify'>";
                     // make each type selectable
                     foreach($conf as $type => $val){
@@ -184,7 +184,7 @@
                 // remove type
                 if($nb_types>0){
                     echo "<form method='POST' action='task.php'>";
-                    echo "<label for='type_to_remove'> Remove a type :</label>";
+                    echo "<label for='type_to_remove'> Remove a type:</label>";
                     echo "<select name='type_to_remove' id='type_to_remove'>";
                     // make each type selectable
                     foreach($conf as $type => $val){

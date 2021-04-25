@@ -82,6 +82,7 @@
 
 <body>
     <div id='pane'>
+        <header> <meta name="viewport" content="width=device-width, initial-scale=1.0"> </header>
         <h1> Updated scores: </h1>
         <p>
             <?php
@@ -149,7 +150,7 @@
                 echo "<h2> Settings : </h2>";
                 // modify rates from...
                 echo "<form method='POST' action='trade.php'>";
-                echo "<label for='rate_from'> Modify the rate from :</label>";
+                echo "<label for='rate_from'> Modify the rate from:</label>";
                 echo "<select name='rate_from' id='rate_from'>";
                 foreach($tasks as $task){
                     echo "<option value='".$task."'> ".$task." </option>";

@@ -186,15 +186,15 @@
         </header>
 
         <form method='POST' action='admin.php'>
-            <p> <h3> Admin password </h3> :<input type='text' name='password' /></p>
-            <p> Add a new roommate :<input type='text' name='new_name' /></p>
-            <p> Add a new task :<input type='text' name='new_task' /></p>
+            <p> <h3> Admin password:</h3> <input type='text' name='password' /></p>
+            <p> Add a new roommate:<input type='text' name='new_name' /></p>
+            <p> Add a new task:<input type='text' name='new_task' /></p>
             <p><input class='button' type='submit' name='submit' value='Add' /></p> 
 
         <?php
             if(count($users)>0){
                 // modify existing types if any
-                echo "<label for='user_to_modify'> Modify a user :</label>";
+                echo "<label for='user_to_modify'> Modify a user:</label>";
                 echo "<select name='user_to_modify' id='user_to_modify'>";
                 // make each type selectable
                 foreach($users as $user){
@@ -205,7 +205,7 @@
                 echo "<p><input type='submit' name='submit_modify_user' value='Modify user' /></p>";
                 // remove type
                 echo "<form method='POST' action='admin.php'>";
-                echo "<label for='user_to_remove'> Remove a user :</label>";
+                echo "<label for='user_to_remove'> Remove a user:</label>";
                 echo "<select name='user_to_remove' id='user_to_remove'>";
                 // make each type selectable
                 foreach($users as $user){
@@ -217,7 +217,7 @@
             if($nbtasks>0){
                 // modify existing types if any
                 echo "<form method='POST' action='admin.php'>";
-                echo "<label for='task_to_modify'> Modify a task :</label>";
+                echo "<label for='task_to_modify'> Modify a task:</label>";
                 echo "<select name='task_to_modify' id='task_to_modify'>";
                 // make each type selectable
                 foreach($tasks as $task){
@@ -228,7 +228,7 @@
                 echo "<p><input type='submit' name='submit_modify_task' value='Modify task' /></p>";
                 // remove type
                 echo "<form method='POST' action='admin.php'>";
-                echo "<label for='task_to_remove'> Remove a task :</label>";
+                echo "<label for='task_to_remove'> Remove a task:</label>";
                 echo "<select name='task_to_remove' id='task_to_remove'>";
                 // make each type selectable
                 foreach($tasks as $task){

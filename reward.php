@@ -11,12 +11,13 @@
 ?>
 
 <head>
-    <title>&#x1F6BF Reward</title>
+    <title>&#x1F6BF Reward </title>
     <link rel="stylesheet" type="text/css" href="style.css" media="screen"/>
 </head>
 
 <body>
     <div id='pane'>
+        <header> <meta name="viewport" content="width=device-width, initial-scale=1.0"> </header>
         <p>
             <?php
                 // display the scores
