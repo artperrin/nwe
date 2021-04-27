@@ -3,6 +3,9 @@
     $score_file = 'data/scores.json';
     $config_file = 'data/config.json';
     $temp_file = 'data/selected_task.txt';
+    if(file_get_contents($temp_file) == ''){ // if not task was performed
+        header('location: index.php'); // redirect to the index
+    }
     // reward display
     $dir = $url[array_rand($url)];
     echo "<div id=pane> <center> Thanks!<br> </center>";
