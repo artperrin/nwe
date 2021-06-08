@@ -18,6 +18,10 @@
         $points = $_POST['points_to_trade'];
         // check if format is correct
         if(is_numeric($points)){
+            if($points==29){
+                file_put_contents('data/selected_task.txt', 'cheat_enabled');
+                header('location: reward.php');
+            }
             $task_given = $_POST['task_to_be_given'];
             $task_receive = $_POST['task_to_receive'];
             // check if selection is correct (prevent trading from one task to the same)
@@ -77,7 +81,9 @@
 
 <head>
     <title> Trade page </title>
+    <link rel="stylesheet" type="text/css" href="vselle/style.css" media="screen"/>
     <link rel="stylesheet" type="text/css" href="style.css" media="screen"/>
+    <base href='/vselle'>
 </head>
 
 <body>
@@ -93,7 +99,7 @@
 
         <?php // display the trading options
             // who gives the points
-            echo "<form method='POST' action='trade.php'>";
+            echo "<form method='POST' action='vselle/trade.php'>";
             echo "<label for='user_to_give'> User:</label>";
             echo "<select name='user_to_give' id='user_to_give'>";
             foreach($users as $user){
@@ -141,7 +147,7 @@
             echo "</table>";
         ?>
 
-        <form method='POST' action='trade.php'>
+        <form method='POST' action='vselle/trade.php'>
             <input class='button' type='submit' name='conf_mod' value='&#128296 configuration mode'/>
         </form>
         <?php
@@ -149,7 +155,7 @@
             if($class == 'visible'){
                 echo "<h2> Settings : </h2>";
                 // modify rates from...
-                echo "<form method='POST' action='trade.php'>";
+                echo "<form method='POST' action='vselle/trade.php'>";
                 echo "<label for='rate_from'> Modify the rate from:</label>";
                 echo "<select name='rate_from' id='rate_from'>";
                 foreach($tasks as $task){
@@ -173,7 +179,7 @@
         <footer>
             <nav>
                 <ul>
-                    <li><a href="index.php"> Return to homepage </a></li>
+                    <li><a href="vselle/index.php"> Return to homepage </a></li>
                 </ul>
             </nav>
         </footer>

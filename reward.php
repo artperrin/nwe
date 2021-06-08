@@ -3,7 +3,7 @@
     $score_file = 'data/scores.json';
     $config_file = 'data/config.json';
     $temp_file = 'data/selected_task.txt';
-    if(file_get_contents($temp_file) == ''){ // if not task was performed
+    if(file_get_contents($temp_file) == ''){ // if no task was performed
         header('location: index.php'); // redirect to the index
     }
     // reward display
@@ -15,7 +15,9 @@
 
 <head>
     <title>&#x1F6BF Reward </title>
+    <link rel="stylesheet" type="text/css" href="vselle/style.css" media="screen"/>
     <link rel="stylesheet" type="text/css" href="style.css" media="screen"/>
+    <base href='/vselle'>
 </head>
 
 <body>
@@ -32,7 +34,7 @@
         <footer>
             <nav>
                 <ul>
-                    <li><a href="index.php"> Return to homepage </a></li>
+                    <li><a href="vselle/index.php"> Return to homepage </a></li>
                 </ul>
             </nav>
         </footer>

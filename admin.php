@@ -174,8 +174,9 @@
 
 <head>
     <title>&#x1F6BF Admin page </title>
-    <!-- <link rel="stylesheet" type="text/css" href="/artos/style.css" media="screen"/> -->
+    <link rel="stylesheet" type="text/css" href="vselle/style.css" media="screen"/>
     <link rel="stylesheet" type="text/css" href="style.css" media="screen"/>
+    <base href='/vselle'>
 </head>
 
 <body>
@@ -185,7 +186,7 @@
             <h1> <a href = "" > Admin page </a> </h1>
         </header>
 
-        <form method='POST' action='admin.php'>
+        <form method='POST' action='vselle/admin.php'>
             <p> <h3> Admin password:</h3> <input type='text' name='password' /></p>
             <p> Add a new roommate:<input type='text' name='new_name' /></p>
             <p> Add a new task:<input type='text' name='new_task' /></p>
@@ -204,7 +205,7 @@
                 echo "<p> New name <input type='text' name='user_new_name' /></p>";
                 echo "<p><input type='submit' name='submit_modify_user' value='Modify user' /></p>";
                 // remove type
-                echo "<form method='POST' action='admin.php'>";
+                echo "<form method='POST' action='vselle/admin.php'>";
                 echo "<label for='user_to_remove'> Remove a user:</label>";
                 echo "<select name='user_to_remove' id='user_to_remove'>";
                 // make each type selectable
@@ -216,7 +217,7 @@
             }
             if($nbtasks>0){
                 // modify existing types if any
-                echo "<form method='POST' action='admin.php'>";
+                echo "<form method='POST' action='vselle/admin.php'>";
                 echo "<label for='task_to_modify'> Modify a task:</label>";
                 echo "<select name='task_to_modify' id='task_to_modify'>";
                 // make each type selectable
@@ -227,7 +228,7 @@
                 echo "<p> New name <input type='text' name='task_new_name' /></p>";
                 echo "<p><input type='submit' name='submit_modify_task' value='Modify task' /></p>";
                 // remove type
-                echo "<form method='POST' action='admin.php'>";
+                echo "<form method='POST' action='vselle/admin.php'>";
                 echo "<label for='task_to_remove'> Remove a task:</label>";
                 echo "<select name='task_to_remove' id='task_to_remove'>";
                 // make each type selectable
@@ -240,7 +241,6 @@
         ?>
 
             <input class='button' type='submit' name='reset_one' value='&#9888; Reset all &#9888;'/>
-        </form>
         <?php
             // display configuration mode if needed
             if($class == 'visible'){
@@ -251,7 +251,7 @@
         <footer>
             <nav>
                 <ul>
-                    <li><a href="index.php"> Return to homepage </a></li>
+                    <li><a href="vselle/index.php"> Return to homepage </a></li>
                 </ul>
             </nav>
         </footer>

@@ -20,8 +20,9 @@
 
 <head>
     <title>&#x1F6BF Roommate equalizer</title>
-    <!-- <link rel="stylesheet" type="text/css" href="/artos/style.css" media="screen"/> -->
+    <link rel="stylesheet" type="text/css" href="vselle/style.css" media="screen"/>
     <link rel="stylesheet" type="text/css" href="style.css" media="screen"/>
+    <base href='/vselle'>
 </head>
 
 <body>
@@ -40,7 +41,7 @@
             // display the available tasks
             if(count($tasks)>0){
                 // Task selection
-                echo "<form method='POST' action='index.php'>";
+                echo "<form method='POST' action='vselle/index.php'>";
                 echo "<p> <fieldset> <legend> Choose your task:</legend>";
                 foreach($tasks as $task){
                     echo "<input type='radio' name='task_name' value='".$task."' id='".$task."'>";
@@ -59,14 +60,14 @@
     <div id='pane'>
         <nav>
             <ul>
-                <li><a href="trade.php"> Enter trade page </a></li>
+                <li><a href="vselle/trade.php"> Enter trade page </a></li>
             </ul>
         </nav>
 
     <footer>
     <nav>
         <ul>
-            <li><a href="admin.php"> Go to admin page </a></li>
+            <li><a href="vselle/admin.php"> Go to admin page </a></li>
         </ul>
     </nav>
 

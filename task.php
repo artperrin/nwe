@@ -111,7 +111,9 @@
     <?php
     echo "<title> ".$currentTask." </title>";
     ?>
+    <link rel="stylesheet" type="text/css" href="vselle/style.css" media="screen"/>
     <link rel="stylesheet" type="text/css" href="style.css" media="screen"/>
+    <base href='/vselle'>
 </head>
 
 <body>
@@ -126,7 +128,7 @@
             // display the users and the types of task if any
             if($nb_types>0){
                 // who did the task
-                echo "<form method='POST' action='task.php'>";
+                echo "<form method='POST' action='vselle/task.php'>";
                 echo "<p> <fieldset> <legend> Who did the task ?</legend>";
                 foreach($users as $user){
                     echo "<input type='radio' name='person' value='".$user."' id='".$user."'>";
@@ -138,6 +140,7 @@
                 // what type of task
                 if($nb_types > 1){ // if more than one type, display them
                     echo "<p> <fieldset> <legend> What type of task ?</legend>";
+                    asort($conf);
                     foreach($conf as $type => $val){
                         echo "<input type='radio' name='type' value='".$val."' id='".$type."'>";
                         echo "<label for='".$type."'> ".$type." </label><br/>";
@@ -153,7 +156,7 @@
             }
         ?>
 
-        <form method='POST' action='task.php'>
+        <form method='POST' action='vselle/task.php'>
             <input class='button' type='submit' name='conf_mod' value='&#128296 configuration mode'/>
         </form>
         <?php
@@ -162,7 +165,7 @@
                 echo "<h1> Settings : </h1>";
                 // modify existing types if any
                 if($nb_types>0){
-                    echo "<form method='POST' action='task.php'>";
+                    echo "<form method='POST' action='vselle/task.php'>";
                     echo "<label for='type_to_modify'> Modify a type:</label>";
                     echo "<select name='type_to_modify' id='type_to_modify'>";
                     // make each type selectable
@@ -176,14 +179,14 @@
                 }
                 // add type
                 echo "<h2> Add a type : </h2>";
-                echo "<form method='POST' action='task.php'>";
+                echo "<form method='POST' action='vselle/task.php'>";
                 echo "<p> Type name <input type='text' name='add_type_name' /></p>";
                 echo "<p> Number of points <input type='text' name='add_type_score' /></p>";
                 echo "<p><input type='submit' name='submit_add_type' value='Add' /></p>";
                 echo "</form>";
                 // remove type
                 if($nb_types>0){
-                    echo "<form method='POST' action='task.php'>";
+                    echo "<form method='POST' action='vselle/task.php'>";
                     echo "<label for='type_to_remove'> Remove a type:</label>";
                     echo "<select name='type_to_remove' id='type_to_remove'>";
                     // make each type selectable
@@ -200,7 +203,7 @@
         <footer>
             <nav>
                 <ul>
-                    <li><a href="index.php"> Return to homepage </a></li>
+                    <li><a href="vselle/index.php"> Return to homepage </a></li>
                 </ul>
             </nav>
         </footer>
